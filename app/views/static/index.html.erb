@@ -1,0 +1,373 @@
+<!-- <script>
+  $(document).ready(function(){
+      $(".btn1").click(function(){
+          $("p").slideUp();
+      });
+      $(".btn2").click(function(){
+          $("p").slideDown();
+      });
+  });
+</script> -->
+<style type="text/css">
+  .breadcrumb-2 > li + li:before {
+      padding: 0 16px;
+      color: transparent;
+  }
+  .muted {
+    font-weight: 600;
+    opacity: .7;
+    line-height: 2em;
+  }
+  li.post-button{
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+</style>
+
+<section id="home" class="page-title page-title-2 image-bg overlay parallax">
+  <div class="background-image-holder">
+    <img alt="Background Image" class="background-image" src="img/food.png" />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 class="uppercase mb8" style="font-color: #f8f8f8; opacity: .8;">The Beach House <span class="muted">Recipe Collection</span></h2>
+        <h5 class="mb0" style="font-weight: 500;"><em>These are the things we like to eat.</em></h5>
+      </div>
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+
+<section style="padding: 0px;">
+  <div class="container">
+    <div class="row">
+      <ul class="accordion accordion-2" style="margin-bottom: 8px">
+        <li class="">
+          <div class="title" style="font-size: 1.5em; font-weight: 600; border-bottom: none;">
+            <span>Categories, Tags, & Filters</span>
+          </div>
+          <div class="content" style="margin-left: 50px;">
+            <ol class="breadcrumb breadcrumb-2">
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Meal Plan</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Lunch</a>
+              </li>
+              <li class="active">
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Dessert</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Spring</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Fall</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Winter</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Hot Weather</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Holiday</a>
+              </li>
+              <li>
+                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Vegetarian</a>
+              </li>
+            </ol>
+          </div>
+        </li>
+      </ul>
+      <!-- <div class="col-md-4">
+        <h3 class="uppercase mb0">Category Filters</h3>
+      </div> -->
+      <div class="col-md-10">
+        <!-- <h5 class="uppercase mb40">Multiple Open</h5> -->
+
+        <!--end of accordion-->
+      </div>
+
+      <!-- <div class="col-md-6 text-right">
+
+      </div> -->
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+
+<script type="text/html" id="template-recipe-excerpt">
+  <div class="col-sm-4 post-snippet masonry-item">
+    <a class="recipe-url" href="/recipe.html">
+      <img alt="recipe-image Post Image" src="img/ginger-beef.png" />
+    </a>
+    <div class="inner">
+      <a class="recipe-url2" href="/recipe.html">
+        <h3 class="recipe-title mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Ginger Beef Stir Fry</h3>
+      </a>
+      <hr>
+      <p class="recipe-description">
+        Tender beef and crisp asparagus are quickly stir-fried with warming ginger and served over fluffy basmati rice. Hoisin sauce adds a touch of sweetness and depth of flavor.
+      </p>
+      <a class="recipe-url3 btn btn-sm" href="/recipe.html">Read More</a>
+      <!-- <ul class="tags pull-right">
+        <li>
+          <a class="btn btn-sm btn-icon" href="#">
+            <i class="ti-twitter-alt"></i>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-sm btn-icon" href="#">
+            <i class="ti-facebook"></i>
+          </a>
+        </li>
+      </ul> -->
+    </div>
+  </div>
+</script>
+
+<section class="bg-secondary">
+  <div class="container">
+    <div class="row masonry-loader">
+      <div class="col-sm-12 text-center">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div id="recipeExcerpts" class="recipe-excerpts row masonry masonryFlyIn mb40">
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="/recipe.html">
+          <img alt="Post Image" src="img/ginger-beef.png" />
+        </a>
+        <div class="inner">
+          <a href="/recipe.html">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Ginger Beef Stir Fry</h3>
+          </a>
+          <hr>
+          <p>
+            Tender beef and crisp asparagus are quickly stir-fried with warming ginger and served over fluffy basmati rice. Hoisin sauce adds a touch of sweetness and depth of flavor.
+          </p>
+          <a class="btn btn-sm" href="/recipe.html">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="#">
+          <img alt="Post Image" src="img/black-bean-farro-salad.png" />
+        </a>
+        <div class="inner">
+          <a href="#">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Black Bean and Farro Salad </h3>
+            <span>with Apples and Cilantro Vinaigrette</span>
+          </a>
+          <hr>
+          <p>
+            Black beans and farro team up beautifully in this ultra-hearty grain salad. The duo pairs unexpectedly well with a crunchy Granny Smith apple and creamy avocado. A bright cilantro and shallot vinaigrette ties the whole dish together.
+          </p>
+          <a class="btn btn-sm" href="#">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="#">
+          <img alt="Post Image" src="img/blackened-catfish.png" />
+        </a>
+        <div class="inner">
+          <a href="#">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Blackened Catfish</h3>
+            <span>with Crispy Potatoes and Blistered Summer Vegetables</span>
+          </a>
+          <hr>
+          <p>
+            Typically battered and fried, catfish is a staple of Southern cooking. For a lighter preparation, we’re blackening this flaky fish with a potent mix of spices. A side of crispy roasted potatoes and caramelized vegetables complements the dish; a sprinkling of chopped cilantro and a wedge of lemon brightens it up.
+          </p>
+          <a class="btn btn-sm" href="#">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="#">
+          <img alt="Post Image" src="img/coconut-crusted-chicken-fingers.png" />
+        </a>
+        <div class="inner">
+          <a href="#">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Coconut-Crusted Chicken Fingers</h3>
+            <span>with Garlic Green Beans and Spiced Sweet Potato Fries</span>
+          </a>
+          <hr>
+          <p>
+            Crispy panko and flaky coconut give ordinary chicken fingers a major boost. For a smoky-sweet twist on oven fries, we’re sprinkling these sweet potatoes with a touch of paprika. A side of garlicky green beans is the perfect 5-minute side dish.
+          </p>
+          <a class="btn btn-sm" href="#">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="#">
+          <img alt="Post Image" src="img/plantain-and-black-bean-tostadas.png" />
+        </a>
+        <div class="inner">
+          <a href="#">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Plantain and Black Bean Tostadas</h3>
+            <span>with Pickled Red Onion, Avocado, and Feta</span>
+          </a>
+          <hr>
+          <p>
+            Plantains are a staple of Latin and South American cuisine— used both in their ripe and unripe forms. Ripe, spotted yellow plantains can be fried into maduros. Starchy and slightly sweet, maduros are the star of these tostadas. Paired with pickled onion, the creaminess of avocado, and smoky cumin, each bite has the perfect balance of flavor.
+          </p>
+          <a class="btn btn-sm" href="#">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="/recipe.html">
+          <img alt="Post Image" src="img/ginger-beef.png" />
+        </a>
+        <div class="inner">
+          <a href="/recipe.html">
+            <h3 class="mb0 color-primary" style="font-size: 1.5em; font-weight: 900;">Ginger Beef Stir Fry</h3>
+          </a>
+          <hr>
+          <p>
+            Tender beef and crisp asparagus are quickly stir-fried with warming ginger and served over fluffy basmati rice. Hoisin sauce adds a touch of sweetness and depth of flavor.
+          </p>
+          <a class="btn btn-sm" href="/recipe.html">Read More</a> -->
+          <!-- <ul class="tags pull-right">
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-twitter-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-sm btn-icon" href="#">
+                <i class="ti-facebook"></i>
+              </a>
+            </li>
+          </ul> -->
+        <!-- </div>
+      </div> -->
+      <!--end of snippet-->
+
+
+
+
+
+      <!-- <div class="col-sm-4 post-snippet masonry-item">
+        <a href="#">
+          <blockquote>
+            Here's a lovely quote post you can use to say something poignant or important.
+            <span class="author">Important Person - September 21, 2015</span>
+          </blockquote>
+        </a>
+      </div> -->
+      <!--end of snippet-->
+
+
+    </div>
+    <!--end of row-->
+
+
+    <div class="row">
+        <div class="text-center">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>

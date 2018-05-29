@@ -1,0 +1,30 @@
+# Day to day
+
+## Which files to edit
+
+To add a new page:
+config/routes.rb
+app/controllers/static_controller.rb [optional]
+app/views/static/<page_name>.html.erb
+
+To change the layout:
+app/views/layouts/application.html.erb
+
+To change the css/js/img/fonts
+public/* [note: this is not technically correct, but one thing at a time]
+
+# Running a server
+
+## Start a rails server
+
+rails s
+
+## First time install
+
+rake db:setup
+rake db:migrate
+rails s
+
+## Deployment
+
+TODO: Figure this out
