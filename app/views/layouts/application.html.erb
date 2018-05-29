@@ -8,13 +8,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/theme-startup.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/theme-startup.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -30,10 +30,10 @@
           <nav>
             <div class="nav-bar">
               <div class="module left">
-                <a href="index.html" style="margin-top: 5px;">
+                <a href="/" style="margin-top: 5px;">
                   <H3>Recipes</H3>
-                  <!-- <img class="logo logo-light" alt="Foundry" src="img/logo-light.png" />
-                  <img class="logo logo-dark" alt="Foundry" src="img/logo-dark.png" /> -->
+                  <!-- <img class="logo logo-light" alt="Foundry" src="/img/logo-light.png" />
+                  <img class="logo logo-dark" alt="Foundry" src="/img/logo-dark.png" /> -->
                 </a>
               </div>
               <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
@@ -43,22 +43,22 @@
                 <div class="module left">
                   <ul class="menu">
                     <li class="">
-                      <a href="#">
+                      <a href="/">
                         Home
                       </a>
                     </li>
                     <li class="">
-                      <a href="#">
+                      <a href="/recipes">
                         Recipes
                       </a>
                     </li>
                     <li class="">
-                      <a href="#">
+                      <a href="/shoppinglist">
                         Shopping List
                       </a>
                     </li>
                     <li class="">
-                      <a href="#">
+                      <a href="/about">
                         About
                       </a>
                     </li>
@@ -83,7 +83,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-sm-6">
-                <img alt="Logo" class="logo" src="img/logo-light.png" />
+                <img alt="Logo" class="logo" src="/img/logo-light.png" />
               </div>
               <div class="col-md-3 col-sm-6">
               <div class="widget">
