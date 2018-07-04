@@ -2,11 +2,11 @@ $(document).ready(function() {
   "use strict";
 
   // Call recipe endpoint
-  $.getJSON("/recipes")
-    .done(makeRecipeExcerpts)
-    .fail(function() {
-      console.log( "error" );
-    })
+  // $.getJSON("/recipes")
+  //   .done(makeRecipeExcerpts)
+  //   .fail(function() {
+  //     console.log( "error" );
+  //   })
 });
 
 function makeRecipeExcerpts(excerpts){

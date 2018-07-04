@@ -1,9 +1,8 @@
-<%= javascript_pack_tag 'application' %>
-<%= react_component 'RecipeList', { recipes: [
+[
   {
     "id": 1,
     "url": "/tuscan-sausage-linguine",
-    "title": "Tuscan Sausage Linguine",
+    "title:": "Tuscan Sausage Linguine",
     "subtitle": "with Zucchini, Chilies, and Parmesan",
     "description:": "Juicy pork sausage, thyme, and garlic create the perfect flavor base for this classic pasta sauce. Zesty lemon and spicy chili flakes add a serious kick. This recipe is so simple and delicious, it’s sure to become a part of your weekly repertoire.",
     "image": "",
@@ -88,7 +87,7 @@
   {
     "id": 2,
     "url": "/warm-grain-salad",
-    "title": "Warm Grain Salad ",
+    "title:": "Warm Grain Salad ",
     "subtitle": "With Barley, Avocado & Burst Tomatoes",
     "description:": "We love a good grain salad - it's all about the mix-ins! Here, We're tossing in Creamy butter beans, silky avocado, and burst grape tomatoes for a fun mix of colors and textures. Torn basil adds a touch of lemony freshness for the perfect finish.",
     "image": "",
@@ -162,7 +161,7 @@
   {
     "id": 3,
     "url": "/Vietnamese-beef-stir-fry",
-    "title": "Vietnamese Beef Stir-Fry",
+    "title:": "Vietnamese Beef Stir-Fry",
     "subtitle": "with Basil, Coconut Rice, and Crispy Green Beans",
     "description:": "Stir-frying is one of the best techniques for putting dinner on the table in under 30 minutes. An aromatic combo of basil, garlic, and serrano chili gives this dish an intense flavor base. Served over fluffy coconut rice, this is one stir-fry you’ll want to make again and again.",
     "image": "",
@@ -246,7 +245,7 @@
   {
     "id": 4,
     "url": "/chicken-fajitas",
-    "title": "Chicken Fajitas",
+    "title:": "Chicken Fajitas",
     "subtitle": "with Homemade Guacamole and Pico De Gallo",
     "description:": "  No need to go to a restaurant tonight! Make your own sizzling chicken fajitas with crunchy red bell pepper, soft caramelized onion, and creamy guacamole. This dish has party written all over it.",
     "image": "",
@@ -334,7 +333,7 @@
   {
     "id": 5,
     "url": "/sweet-ginger-seared-tuna",
-    "title": "Sweet Ginger Seared Tuna",
+    "title:": "Sweet Ginger Seared Tuna",
     "subtitle": "The Secret Ingredient (Ginger Jam)",
     "description:": "",
     "image": "/GingerSearedTuna.jpg",
@@ -382,7 +381,7 @@
   {
     "id": 6,
     "url": "/black-bean-farro-salad",
-    "title": "Black Bean and Farro Salad",
+    "title:": "Black Bean and Farro Salad",
     "subtitle": "with Apples and Cilantro Vinaigrette",
     "description:": "Black beans and farro team up beautifully in this ultra-hearty grain salad. The duo pairs unexpectedly well with a crunchy Granny Smith apple and creamy avocado. A bright cilantro and shallot vinaigrette ties the whole dish together.",
     "image": "",
@@ -449,7 +448,7 @@
   {
     "id": 7,
     "url": "/maple-vanilla-almond-clusters",
-    "title": "Maple Vanilla Almond Clusters",
+    "title:": "Maple Vanilla Almond Clusters",
     "subtitle": "",
     "description:": "",
     "image": "/maple-vanilla-almond-clusters.jpg",
@@ -509,7 +508,7 @@
   {
     "id": 8,
     "url": "/tuna-salad-lettuce-wraps",
-    "title": "Tuna Salad Lettuce Wraps",
+    "title:": "Tuna Salad Lettuce Wraps",
     "subtitle": "",
     "description:": "These simple lettuce wraps stuffed with tuna salad, avocado, and tomatoes make a perfect, healthy lunch!",
     "image": "/tuna-salad-lettuce-wraps.jpg",
@@ -560,7 +559,7 @@
       "2: Evenly spread tuna salad down the center of each lettuce leaf, stopping about two inches away from the green, leafy end.",
       "3: Arrange avocado slices and diced tomatoes over the tuna salad, sprinkle with pepper to taste, and serve immediately."
     ],
-    "tags": [""],
+    "tags": "",
     "source": {
       "name": "The Weary Chef 2013-2016 Author: Andi Gleeson",
       "url": "http://wearychef.com/quick-and-easy-lunch-ideas/"
@@ -571,7 +570,7 @@
   {
     "id": 9,
     "url": "/maple-cinnamon-roasted-butternut-squash",
-    "title": "Maple Cinnamon Roasted Butternut Squash",
+    "title:": "Maple Cinnamon Roasted Butternut Squash",
     "subtitle": "",
     "description:": "",
     "image": "/Maple-Roasted-Butternut-Squash.jpg",
@@ -629,7 +628,7 @@
   {
     "id": 10,
     "url": "/double-ginger-cookie",
-    "title": "Double-Ginger Cookies",
+    "title:": "Double-Ginger Cookies",
     "subtitle": "",
     "description:": "These simple cookies give just the right amount of sweet to satisfy your craving. Make a few batches, and freeze some to enjoy throughout the season.",
     "image": "/double-ginger-cookie.jpg",
@@ -717,4 +716,4 @@
     "added": "",
     "updated": ""
   }
-]} %>
+]
