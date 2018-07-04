@@ -30,6 +30,7 @@ rails s
 --------------------
 ## First time install
 
+brew install yarn
 rake db:setup
 rake db:migrate
 rails s
