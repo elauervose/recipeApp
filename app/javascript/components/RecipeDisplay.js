@@ -6,22 +6,40 @@ import TagList from "./TagList"
 
 function RecipeDisplay (props) {
   return (
-    <article>
-      <a onClick={props.handleStartEdit}>Edit</a>
-      Image: {props.image}<br />
-      <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
-      <div className="byline">
-        <div className="tags">Tags: <TagList tags={props.tags} /></div>
-        <div className="dates">
-          <span className="updatedOn">Updated: {props.updated}</span> |
-          <span className="addedOn">Added: {props.added}</span>
+    <article className="container">
+      <div className="row">
+        <div className="col">
+          <a onClick={props.handleStartEdit}>Edit</a>
+          Image: {props.image}<br />
+          <h2 className="display-2">{props.title}</h2>
+          <p className="lead">{props.subtitle}</p>
+          <div className="byline small">
+            {props.tags.length > 0 &&
+              <span className="tags">Tags: <TagList tags={props.tags} /></span>
+            }
+            {props.updated &&
+              <span className="updatedOn">Updated: {props.updated}</span>
+            }
+            {props.added &&
+              <span className="addedOn">Added: {props.added}</span>
+            }
+          </div>
         </div>
       </div>
-      Description: {props.description}<br />
-      Directions: <DirectionList steps={props.directions} /><br />
-      Ingredients: <IngredientList ingredients={props.ingredients} /><br />
-      Source: {props.sourceName} - {props.sourceUrl}
+      <div className="row">
+        <div className="col">
+          <IngredientList ingredients={props.ingredients} />
+        </div>
+        <div className="col">
+          <h3>Description</h3>
+          <p>{props.description}</p>
+          <h3>Directions</h3>
+          <DirectionList steps={props.directions} />
+        </div>
+      </div>
+      <div className="row">
+        Source: {props.sourceName} - {props.sourceUrl}
+      </div>
     </article>
   )
 }

@@ -12,7 +12,8 @@ class IngredientList extends React.Component {
     )
     return (
       <React.Fragment>
-        Ingredients: <ul>{listItems}</ul>
+        <h3>Ingredients</h3>
+        <ul>{listItems}</ul>
       </React.Fragment>
     );
   }
