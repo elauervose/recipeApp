@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import DirectionList from "./DirectionList"
-import IngredientList from "./IngredientList"
-import TagList from "./TagList"
+
 import RecipeForm from "./RecipeForm"
+import RecipeDisplay from "./RecipeDisplay"
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -11,11 +10,12 @@ class Recipe extends React.Component {
 
     this.state = {
       isEditing: false,
-      recipe: {...props}
+      ...props
     }
 
     this.handleStartEdit = this.handleStartEdit.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleStartEdit(event) {
@@ -24,34 +24,29 @@ class Recipe extends React.Component {
     this.setState({isEditing: true})
   }
 
-  handleSubmit(newState) {
+  handleSubmit(event) {
+    event.preventDefault()
+
     this.setState({
-      isEditing: false,
-      recipe: {...newState}
+      isEditing: false
     })
+  }
+
+  handleChange(event) {
+    const target = event.target;
+
+    this.setState({
+      [target.name]: target.type === 'checkbox'
+        ? target.checked
+        : target.value
+    });
   }
 
   render () {
     return (
       this.state.isEditing === true
-      ? <RecipeForm initialState={this.state.recipe} handleSubmit={this.handleSubmit} />
-      : <article>
-          <a onClick={this.handleStartEdit}>Edit</a>
-          Image: {this.state.recipe.image}<br />
-          <h1>{this.state.recipe.title}</h1>
-          <h2>{this.state.recipe.subtitle}</h2>
-          <div className="byline">
-            <div className="tags">Tags: <TagList tags={this.state.recipe.tags} /></div>
-            <div className="dates">
-              <span className="updatedOn">Updated: {this.state.recipe.updated}</span> |
-              <span className="addedOn">Added: {this.state.recipe.added}</span>
-            </div>
-          </div>
-          Description: {this.state.recipe.description}<br />
-          Directions: <DirectionList steps={this.state.recipe.directions} /><br />
-          Ingredients: <IngredientList ingredients={this.state.recipe.ingredients} /><br />
-          Source: {this.state.recipe.sourceName} - {this.state.recipe.sourceUrl}
-        </article>
+      ? <RecipeForm {...this.state} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+      : <RecipeDisplay {...this.state} handleStartEdit={this.handleStartEdit} />
     );
   }
 }
@@ -70,5 +65,20 @@ Recipe.propTypes = {
   tags: PropTypes.array,
   sourceName: PropTypes.string,
   sourceUrl: PropTypes.string
-};
+}
+Recipe.defaultProps = {
+  id: PropTypes.number.isRequired,
+  url: '',
+  title: '',
+  subtitle: '',
+  description: '',
+  image: '',
+  added: '',
+  updated: '',
+  directions: [],
+  ingredients: [],
+  tags: [],
+  sourceName: '',
+  sourceUrl: ''
+}
 export default Recipe
