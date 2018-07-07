@@ -3,26 +3,55 @@ import PropTypes from "prop-types"
 import DirectionList from "./DirectionList"
 import IngredientList from "./IngredientList"
 import TagList from "./TagList"
+import RecipeForm from "./RecipeForm"
 
 class Recipe extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isEditing: false,
+      recipe: {...props}
+    }
+
+    this.handleStartEdit = this.handleStartEdit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleStartEdit(event) {
+    event.preventDefault()
+
+    this.setState({isEditing: true})
+  }
+
+  handleSubmit(newState) {
+    this.setState({
+      isEditing: false,
+      recipe: {...newState}
+    })
+  }
+
   render () {
     return (
-      <article>
-        Image: {this.props.image}<br />
-        <h1>{this.props.title}</h1>
-        <h2>{this.props.subtitle}</h2>
-        <div className="byline">
-          <div className="tags">Tags: <TagList tags={this.props.tags} /></div>
-          <div className="dates">
-            <span className="updatedOn">Updated: {this.props.updated}</span> |
-            <span className="addedOn">Added: {this.props.added}</span>
+      this.state.isEditing === true
+      ? <RecipeForm initialState={this.state.recipe} handleSubmit={this.handleSubmit} />
+      : <article>
+          <a onClick={this.handleStartEdit}>Edit</a>
+          Image: {this.state.recipe.image}<br />
+          <h1>{this.state.recipe.title}</h1>
+          <h2>{this.state.recipe.subtitle}</h2>
+          <div className="byline">
+            <div className="tags">Tags: <TagList tags={this.state.recipe.tags} /></div>
+            <div className="dates">
+              <span className="updatedOn">Updated: {this.state.recipe.updated}</span> |
+              <span className="addedOn">Added: {this.state.recipe.added}</span>
+            </div>
           </div>
-        </div>
-        Description: {this.props.description}<br />
-        Directions: <DirectionList steps={this.props.directions} /><br />
-        Ingredients: <IngredientList ingredients={this.props.ingredients} /><br />
-        Source: {this.props.sourceName} - {this.props.sourceUrl}
-      </article>
+          Description: {this.state.recipe.description}<br />
+          Directions: <DirectionList steps={this.state.recipe.directions} /><br />
+          Ingredients: <IngredientList ingredients={this.state.recipe.ingredients} /><br />
+          Source: {this.state.recipe.sourceName} - {this.state.recipe.sourceUrl}
+        </article>
     );
   }
 }
