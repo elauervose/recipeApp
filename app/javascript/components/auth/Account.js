@@ -24,17 +24,13 @@ class Account extends React.Component {
       return;
     }
 
-    // cleanupUi();
     if (user) {
       this.setState({userId: user.uid});
-      // splashPage.style.display = 'none';
       // writeUserData(user.uid, user.displayName, user.email, user.photoURL);
       // startDatabaseQueries();
     } else {
       // Set this.state.userId to null.
       this.setState({userId: ''});
-      // Display the splash page where you can sign-in.
-      // splashPage.style.display = '';
     }
   }
 
