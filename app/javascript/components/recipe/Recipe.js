@@ -52,9 +52,9 @@ class Recipe extends React.Component {
 }
 
 Recipe.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   url: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
@@ -67,7 +67,7 @@ Recipe.propTypes = {
   sourceUrl: PropTypes.string
 }
 Recipe.defaultProps = {
-  id: PropTypes.number.isRequired,
+  id: '',
   url: '',
   title: '',
   subtitle: '',

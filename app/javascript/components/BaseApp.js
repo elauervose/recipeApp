@@ -33,7 +33,6 @@ class BaseApp extends React.Component {
       newRecipes.push({id: doc.id, ...doc.data()})
     })
     this.setState({recipes: newRecipes})
-    debugger
   }
 
   render() {
