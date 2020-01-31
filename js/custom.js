@@ -46,14 +46,11 @@ for(let i = 0; i<recipesMeta.length; i++) {
 
 	RLIST.appendChild(newNode);
 
-	const LTITLE = newNode.querySelector(".listTitle a");
+	const LTITLE = newNode.querySelector(".listTitle");
 	const LIMG = newNode.querySelector(".listImage");
 	const LAUTH = newNode.querySelector(".listAuth");
 	const LTAGS = newNode.querySelector("li.listTags");
 	const LDESC = newNode.querySelector(".listDescription");
-	const LURL = newNode.querySelector("a.recipeListUrl");
-
-
 
 	let addInfo = recipesMeta[i].title;
 	// console.log(addInfo);
@@ -64,12 +61,34 @@ for(let i = 0; i<recipesMeta.length; i++) {
 
 	let addDesc = recipesMeta[i].description;
 	LDESC.innerText = addDesc;
-	
+
+	let addAuth = recipesMeta[i].author;
+	let addAuthUrl = recipesMeta[i].authorurl; 
+	LAUTH.innerText = addAuth;
+	LAUTH.setAttribute("href", addAuthUrl);
+
+	let tags = recipesMeta[i].tags
+	console.log(tags.length);
+
+
+	for( let i = 0; i<tags.length; i++) {
+
+		var newTag = document.createElement("li");
+		// console.log(newTag);
+
+		newTag.className = "listTags";	
+
+		newTag.textContent = tags[i];
+
+		LTAGS.appendChild(newTag);
+
+	}
+	LTAGS.remove();
 }
 
 LITEM.remove();
 
-console.log(RLIST.innerHTML);
+// console.log(RLIST.innerHTML);
 
 
 
