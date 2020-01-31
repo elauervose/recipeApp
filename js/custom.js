@@ -2,12 +2,7 @@
 const RLIST = document.querySelector("#recipeList");
 const LITEM = document.querySelector(".recipeListItem");
 
-const LTITLE = document.querySelector(".listTitle a");
-const LIMG = document.querySelector(".listImage");
-const LAUTH = document.querySelector(".listAuth");
-const LTAGS = document.querySelector("li.listTags");
-const LDESC = document.querySelector(".listDescription");
-const LURL = document.querySelector("a.recipeListUrl");
+
 
 
 var recipesMeta = [
@@ -32,8 +27,8 @@ function IndexItem(title, img, author, authorurl, tags, description, recipeurl) 
 
 // Create a new recipe item element 
 // ***************************************************
-var newNode = document.createElement("div");
-var newItem = newNode.appendChild(LITEM);
+
+
 // console.log(newItem);
 
 
@@ -41,28 +36,40 @@ var newItem = newNode.appendChild(LITEM);
 // ***************************************************
 
 for(let i = 0; i<recipesMeta.length; i++) {
+
+	var newNode = document.createElement("div");
+	
+	newNode.className = "recipeListItem";
+	newNode.classList.add("media");
+
+	newNode.innerHTML = LITEM.innerHTML;
+
+	RLIST.appendChild(newNode);
+
+	const LTITLE = newNode.querySelector(".listTitle a");
+	const LIMG = newNode.querySelector(".listImage");
+	const LAUTH = newNode.querySelector(".listAuth");
+	const LTAGS = newNode.querySelector("li.listTags");
+	const LDESC = newNode.querySelector(".listDescription");
+	const LURL = newNode.querySelector("a.recipeListUrl");
+
+
+
 	let addInfo = recipesMeta[i].title;
-	let addTitle = LTITLE.innerHTML
-	// let createList = 
+	// console.log(addInfo);
+	LTITLE.innerText = addInfo;
+
+	let addImg = recipesMeta[i].img;
+	LIMG.src = addImg;
+
+	let addDesc = recipesMeta[i].description;
+	LDESC.innerText = addDesc;
 	
-	console.log(addTitle);
-	
-	RLIST.appendChild(newItem);
-	// console.log(RLIST.innerHTML);
 }
 
+LITEM.remove();
 
-
-// function createList() {
-
-// 	for(let i = 0; i<recipesMeta.length; i++) {
-// 		var newNode = document.createElement("div");
-// 		var newItem = newNode.appendChild(LITEM);
-// 		RLIST.appendChild(newItem);
-// 	}
-
-
-// }
+console.log(RLIST.innerHTML);
 
 
 
