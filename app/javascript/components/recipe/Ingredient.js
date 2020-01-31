@@ -1,12 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class Ingredient extends React.Component {
   render () {
     return (
       <li>
-        Name: {this.props.name}<br />
-        Amount: {this.props.amount}<br />
-        Unit: {this.props.unit}
+        {this.props.amount} {this.props.unit} – {this.props.name}
       </li>
     );
   }
