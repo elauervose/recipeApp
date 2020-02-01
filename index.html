@@ -34,42 +34,57 @@ layout: default
 <section class="tag-search">
   <div class="container">
     <div class="row">
-      <ul class="accordion accordion-2" style="margin-bottom: 8px">
+      <ul class="mb0">
         <li class="">
-          <div class="title" style="font-size: 1.5em; font-weight: 600; border-bottom: none;">
-            <span>Categories, Tags, & Filters</span>
+          <div class="title" style="font-size: 1.25em; font-weight: 600; border-bottom: none; margin-bottom: 1em;">
+            <span>Filter Results by Categories & Tags: </span>
           </div>
-          <div class="content" style="margin-left: 50px;">
-            <ol class="breadcrumb breadcrumb-2">
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Meal Plan</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Lunch</a>
-              </li>
-              <li class="active">
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Dessert</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Spring</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Fall</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Winter</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Hot Weather</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Holiday</a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-sm btn-rounded uppercase" style="font-size: 1.5em;">Vegetarian</a>
-              </li>
-            </ol>
-          </div>
+          <ul class="post-meta mb0 mt16">
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Dropdown 1
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">*</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Dropdown 2
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><a href="#">*</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Dropdown 3
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                  <li><a href="#">*</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Dropdown 4
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                  <li><a href="#">*</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </li>
       </ul>
       <!-- <div class="col-md-4">
@@ -92,7 +107,7 @@ layout: default
 <!-- ENd Tag Search -->
 
 <!-- Begin Recipe List -->
-<section style="margin-bottom: 0px;">
+<section class="mb0 pt40">
   <div id="recipeList" class="container">
 
     <div class="media recipeListItem" >
@@ -103,8 +118,8 @@ layout: default
       </div>
       <div class="media-body">
         <div class="entry-title">
-          <h3 class="listTitle main-list">*</h3>
-          <ul class="post-meta main-list-tags">
+          <h3 class="listTitle main-list mb16">*</h3>
+          <ul class="post-meta main-list-tags mb8">
             <li>
               <i class="ti-user"></i><span>Recipe by:  <a class="listAuth" href="#">*</a></span>
             </li>
@@ -113,8 +128,49 @@ layout: default
             </li>
           </ul>
         </div>
-        <p class="listDescription"></p>
+        <p class="listDescription mt0"></p>
       </div>
+      <!-- Begin Accordion with full recipe details -->
+      <ul class="accordion accordion-2">
+        <li>
+          <div class="title mt8">
+            <span>See full recipe</span>
+          </div>
+          <div class="content">
+            <div class="mt24">
+
+              <!-- Begin Ingredients -->
+              <div class="col-md-3 feature boxed recipeIngredients">
+                <h5 class="uppercase">Ingredients</h5>
+                <hr>
+                <p>
+                  <ul class="bullets">
+                    <li>*</li>
+                  </ul> 
+                </p>
+              </div>
+              <!-- End Ingredients -->
+
+              <!-- Begin Instructions -->
+              <div class="col-md-8 col-md-offset-1 bordered feature recipeSteps">
+                <h4 class="uppercase">Instructions</h4>
+                <hr>
+                <div class="feature feature-3 recipe recipeStep">
+                  <div class="left steps-number">Step 1:</div>
+                  <div class="right lead steps-text"> 
+                    <p>
+                      *
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Instructions -->
+
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- End Accordion with full recipe details -->
     </div>
     
   </div>

@@ -1,10 +1,12 @@
-
+// Index page constant variables for creating the recipe list
+// *****************************************************
 const RLIST = document.querySelector("#recipeList");
 const LITEM = document.querySelector(".recipeListItem");
 
 
 
-
+// Array of all the recipes listed in the app
+// *****************************************************
 var recipesMeta = [
 	new IndexItem("Ginger Beef Stir-Fry", "img/ginger-beef.png", "HelloFresh", "https://www.hellofresh.com/recipes/ginger-beef-stir-fry-54d39fa96ced6e83368b4567", ["meal plan", "summer", "hot weather"], "Tender beef and crisp asparagus are quickly stir-fried with warming ginger and served over fluffy basmati rice. Hoisin sauce adds a touch of sweetness and depth of flavor.", "/ginger-beef-stir-fry" ),
 	new IndexItem("Black Bean and Farro Salad with Apples and Cilantro Vinaigrette", "img/black-bean-farro-salad.png", "HelloFresh", "https://www.hellofresh.com/recipes/black-bean-and-farro-salad-55ae8b1ff8b25e10218b4567", ["meal plan", "summer", "hot weather"], "Black beans and farro team up beautifully in this ultra-hearty grain salad. The duo pairs unexpectedly well with crunchy Granny Smith apple and creamy avocado. A bright cilantro and shallot vinaigrette ties the whole dish together.", "/black-bean-farro-salad"),
@@ -14,6 +16,9 @@ var recipesMeta = [
 	];
 
 
+
+// Object contsructor for the recipes listed
+// *****************************************************
 function IndexItem(title, img, author, authorurl, tags, description, recipeurl) {
 	this.title = title;
 	this.img = img;
@@ -25,15 +30,9 @@ function IndexItem(title, img, author, authorurl, tags, description, recipeurl) 
 }
 
 
-// Create a new recipe item element 
-// ***************************************************
-
-
-// console.log(newItem);
-
-
-// for loop to go through all the recipes in recipeMeta
-// ***************************************************
+// Create a new recipe item element & for loop 
+// to go through all the recipes in recipeMeta
+// **********************************************
 
 for(let i = 0; i<recipesMeta.length; i++) {
 
@@ -53,7 +52,6 @@ for(let i = 0; i<recipesMeta.length; i++) {
 	const LDESC = newNode.querySelector(".listDescription");
 
 	let addInfo = recipesMeta[i].title;
-	// console.log(addInfo);
 	LTITLE.innerText = addInfo;
 
 	let addImg = recipesMeta[i].img;
@@ -68,9 +66,10 @@ for(let i = 0; i<recipesMeta.length; i++) {
 	LAUTH.setAttribute("href", addAuthUrl);
 
 	let tags = recipesMeta[i].tags
-	console.log(tags.length);
 
 
+	// Nested for loop for creating a list of recipe tags
+	// ****************************************************
 	for( let i = 0; i<tags.length; i++) {
 
 		var newTag = document.createElement("li");
@@ -83,14 +82,17 @@ for(let i = 0; i<recipesMeta.length; i++) {
 		LTAGS.appendChild(newTag);
 
 	}
-	// LTAGS.remove();
 }
 
 LITEM.remove();
 
-// console.log(RLIST.innerHTML);
 
+// Create Full Recipe Details
+// ****************************************
 
-
+// Variables to use querySelector on
+// recipeIngredients
+// recipeSteps
+// recipeStep
 
 

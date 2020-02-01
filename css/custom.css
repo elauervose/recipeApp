@@ -41,9 +41,7 @@ a.media-left, .media > .pull-left {
   width: 75%;
 }
 
-h2.main-list, h3.main-list {
-  margin-bottom: 10px;
-}
+
 .btn.btn-xs.btn-rounded.uppercase {
   padding: 0 15px;
 }
@@ -53,18 +51,38 @@ h2.main-list, h3.main-list {
   line-height: 24px;
   min-width: 0;
 }
+
+.btn-default:hover, .open > .dropdown-toggle.btn-default:focus, .btn-default:active {
+  border-color:#5edcd0;
+  background: #5edcd0;
+  color: white;
+
+}
+
 section.tag-search {
   position: relative;
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: #f5f5f5;
   border-bottom: 1px solid #eee;
 }
 
 /*Recipe Posts Styles*/
 /**********************************************/
+h3 {
+  font-size: 1.5em;
+  line-height: 30px;
+  font-weight: 500;
+}
+p.listDescription {
+  font-size: 12px;
+  line-height: 20px;
+}
 
 ul.post-meta li a {
   margin-bottom: 0px;
+}
+ul.accordion.accordion-2 {
+  margin-bottom: 2em;
 }
 
 li.listTags {
@@ -78,6 +96,21 @@ li.listTags::after {
   content: " | "; 
 }
 
+p.listDescription {
+  margin-bottom: 0px;
+
+}
+div.title span {
+  font-size: 1.1em; 
+  font-weight: 600; 
+  border-bottom: none;
+}
+
+.accordion-2 .title {
+  font-size: 14px;
+  padding: 0px 0 8px;
+  /*padding-left: 25%;*/
+}
 
 section.page-title-2 {
   max-height: 30em;
@@ -104,6 +137,7 @@ section.page-title-2 {
   color: #5edcd0;
   font-size: 88px;
 }
+
 
 
  /*768 max*/
