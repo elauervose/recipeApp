@@ -65,16 +65,28 @@ section.tag-search {
 
 ul.post-meta li a {
   margin-bottom: 0px;
- }
+}
 
- section.page-title-2 {
+li.listTags {
+  float: left;
+  color: #5edcd0;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+li.listTags::after {
+  content: " | "; 
+}
+
+
+section.page-title-2 {
   max-height: 30em;
   margin-bottom: 2em;
- }
- .post-image {
+}
+.post-image {
   position: relative;
   top: -100px;
- }
+}
 
  .steps-number {
   color: #5edcd0;

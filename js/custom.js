@@ -49,7 +49,7 @@ for(let i = 0; i<recipesMeta.length; i++) {
 	const LTITLE = newNode.querySelector(".listTitle");
 	const LIMG = newNode.querySelector(".listImage");
 	const LAUTH = newNode.querySelector(".listAuth");
-	const LTAGS = newNode.querySelector("li.listTags");
+	const LTAGS = newNode.querySelector("ul.post-meta.main-list-tags");
 	const LDESC = newNode.querySelector(".listDescription");
 
 	let addInfo = recipesMeta[i].title;
@@ -83,7 +83,7 @@ for(let i = 0; i<recipesMeta.length; i++) {
 		LTAGS.appendChild(newTag);
 
 	}
-	LTAGS.remove();
+	// LTAGS.remove();
 }
 
 LITEM.remove();
