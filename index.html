@@ -26,69 +26,59 @@ layout: default
     <div class="row">
       <ul class="mb0">
         <li class="">
-          <div class="title" style="font-size: 1.25em; font-weight: 600; border-bottom: none; margin-bottom: 1em;">
-            <span>Filter Results by Categories & Tags: </span>
+          <div class="container">
+            <div class="title" style="font-size: 1.25em; font-weight: 600; border-bottom: none; margin-bottom: 1em;">
+              <span>Filter Results by Categories & Tags: </span>
+            </div>
+            <ul class="post-meta mb0 mt16">
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Dropdown 1
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">*</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Dropdown 2
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="#">*</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Dropdown 3
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                    <li><a href="#">*</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Dropdown 4
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                    <li><a href="#">*</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
-          <ul class="post-meta mb0 mt16">
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Dropdown 1
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <li><a href="#">*</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Dropdown 2
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li><a href="#">*</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Dropdown 3
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                  <li><a href="#">*</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Dropdown 4
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                  <li><a href="#">*</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
         </li>
       </ul>
-      <!-- <div class="col-md-4">
-        <h3 class="uppercase mb0">Category Filters</h3>
-      </div> -->
-      <div class="col-md-10">
-        <!-- <h5 class="uppercase mb40">Multiple Open</h5> -->
-
-        <!--end of accordion-->
-      </div>
-
-      <!-- <div class="col-md-6 text-right">
-
-      </div> -->
     </div>
     <!--end of row-->
   </div>
@@ -130,19 +120,17 @@ layout: default
             <div class="mt24">
 
               <!-- Begin Ingredients -->
-              <div class="col-md-3 feature boxed recipeIngredients">
+              <div class="col-md-4 feature boxed recipeIngredients">
                 <h5 class="uppercase">Ingredients</h5>
                 <hr>
-                <p>
-                  <ul class="bullets ingredients">
-                    <li>*</li>
-                  </ul> 
-                </p>
+                <ul class="bullets ingredients">
+                  <li class="first">*</li>
+                </ul> 
               </div>
               <!-- End Ingredients -->
 
               <!-- Begin Instructions -->
-              <div class="col-md-8 col-md-offset-1 bordered feature recipeSteps">
+              <div class="col-md-8 col-md-offset-0 bordered feature recipeSteps">
                 <h4 class="uppercase">Instructions</h4>
                 <hr>
                 <div class="feature feature-3 recipe recipeStep">

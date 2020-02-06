@@ -66,6 +66,25 @@ section.tag-search {
   border-bottom: 1px solid #eee;
 }
 
+
+/*Recipe Details Styles*/
+/**********************************************/
+
+.feature.boxed {
+  /*padding-left: 15px;*/
+  padding-right: 15px;
+  margin-right: 3%;
+  max-width: 30%;
+}
+ul.bullets {
+    list-style: outside;
+}
+
+li.ingredients {
+  line-height: normal;
+  font-size: inherit;
+}
+
 /*Recipe Posts Styles*/
 /**********************************************/
 h3 {
