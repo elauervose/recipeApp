@@ -106,66 +106,98 @@ const ALLSTEPS = document.querySelector("div.allSteps") // html node where 'INST
 const RID = document.querySelector("ul.seeRecipe");
 
 const RLI = document.querySelector("ul.ingredients li.first");
-const RSTEP = document.querySelector("div#recipeStep");
+const RSTEP = document.querySelector("div.recipeStep");
+
+
+var clearDetails = RID.firstElementChild;
+// debugger
+
 
 RID.addEventListener('click', function(e){
 
-	const INDEX = e.currentTarget.getAttribute('data-index');
-	const INGREDIENTS = recipesMeta[INDEX].ingredients
-	const INGR = e.currentTarget.querySelector("ul.ingredients"); // recipeIngredients
+		if (clearDetails.classList.contains("active")) {
+
+				const INDEX = e.currentTarget.getAttribute('data-index');
+				const INGREDIENTS = recipesMeta[INDEX].ingredients
+				const INGR = e.currentTarget.querySelector("ul.ingredients"); // recipeIngredients
 
 
-	debugger
-	// Event Listenter with Nested for loop 
-	// for creating a list of recipe INGREDIENTS
-	// ****************************************************
-	for( let i = 0; i<INGREDIENTS.length; i++) {
 
-		var newIng = document.createElement("li");
-		
-		newIng.className = "INGREDIENTS";
-		newIng.classList.add("lead");
+				// Event Listenter with Nested for loop 
+				// for creating a list of recipe INGREDIENTS
+				// ****************************************************
+				for( let i = 0; i<INGREDIENTS.length; i++) {
 
-		newIng.textContent = INGREDIENTS[i];
+					var newIng = document.createElement("li");
+					
+					newIng.className = "ingredients";
+					newIng.classList.add("lead");
 
-		INGR.appendChild(newIng);
-	}
+					newIng.textContent = INGREDIENTS[i];
 
-	let instructions = recipesMeta[INDEX].instructions
+					INGR.appendChild(newIng);
+				}
 
-	// Event Listenter with Nested for loop 
-	// for creating a list of recipe INSTRUCTIONS
-	// ****************************************************
-	for( let i = 0; i<instructions.length; i++) {
-		var newInst = document.createElement("div");
+				let instructions = recipesMeta[INDEX].instructions
 
-		newInst.className = "recipeStep";
-		newInst.classList.add("feature");
-		newInst.classList.add("feature-3");
-		newInst.classList.add("recipe");
-		newInst.classList.add("row");	
+				// Event Listenter with Nested for loop 
+				// for creating a list of recipe INSTRUCTIONS
+				// ****************************************************
+				for( let i = 0; i<instructions.length; i++) {
+					var newInst = document.createElement("div");
 
-		newInst.innerHTML = RSTEPS.innerHTML;
+					newInst.className = "recipeStep";
+					newInst.classList.add("feature");
+					newInst.classList.add("feature-3");
+					newInst.classList.add("recipe");
+					newInst.classList.add("row");	
 
-		const INSTRUCTIONS = newInst.querySelector(".stepsText"); // recipeInstructions
-		const STEPS = newInst.querySelector(".stepsNumber"); // recipeStep
+					newInst.innerHTML = RSTEPS.innerHTML;
 
-		// newStep = INSTRUCTIONS.innerText;
-		// console.log(newStep);
+					const INSTRUCTIONS = newInst.querySelector(".stepsText"); // recipeInstructions
+					const STEPS = newInst.querySelector(".stepsNumber"); // recipeStep
 
-		INSTRUCTIONS.innerText = instructions[i];
-		STEPS.innerText = "Step " + (i+1) + ":"
+					// newStep = INSTRUCTIONS.innerText;
+					// console.log(newStep);
 
-		ALLSTEPS.append(newInst);
-		
+					INSTRUCTIONS.innerText = instructions[i];
+					STEPS.innerText = "Step " + (i+1) + ":"
 
-	}
-	console.log("you clicked it!");
+					ALLSTEPS.append(newInst);
+					
 
-}, false);
+				}
+				console.log("you clicked it!");
 
-RLI.remove();
-RSTEP.remove();
+		} else {
+
+			var ingList = document.querySelectorAll("ul.ingredients li");
+			var stepList = document.querySelectorAll("div.recipeStep");
+
+
+			ingList.forEach(function (ingredientItem) {
+			  ingredientItem.remove();
+			});
+
+			stepList.forEach(function (instructionStep) {
+			  instructionStep.remove();
+			});
+
+		};
+	}, false);
+
+	RLI.remove();
+	RSTEP.remove();
+
+	
+
+
+
+
+
+
+
+
 
 // console.log(INGR.innerHTML);
 // console.log(INSTRUCTIONS.innerHTML);
