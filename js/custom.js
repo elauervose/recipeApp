@@ -72,6 +72,7 @@ for(let i = 0; i<recipesMeta.length; i++) {
 
 	let addId = recipesMeta[i].id;
 	LID.setAttribute("id", addId);
+	LID.setAttribute("data-index", i);
 
 
 	let tags = recipesMeta[i].tags
@@ -100,7 +101,6 @@ LITEM.remove();
 // ****************************************
 
 // Variables to use querySelector on
-const INGR = document.querySelector("ul.ingredients"); // recipeIngredients
 const RSTEPS = document.querySelector("div.recipeStep"); //html node to duplicate for each step
 const ALLSTEPS = document.querySelector("div.allSteps") // html node where 'INSTRUCTIONS' & 'STEPS' live
 const RID = document.querySelector("ul.seeRecipe");
@@ -108,27 +108,30 @@ const RID = document.querySelector("ul.seeRecipe");
 const RLI = document.querySelector("ul.ingredients li.first");
 const RSTEP = document.querySelector("div#recipeStep");
 
-RID.addEventListener('click', function(){
+RID.addEventListener('click', function(e){
 
-	let i = 0;
-	let ingredients = recipesMeta[i].ingredients
+	const INDEX = e.currentTarget.getAttribute('data-index');
+	const INGREDIENTS = recipesMeta[INDEX].ingredients
+	const INGR = e.currentTarget.querySelector("ul.ingredients"); // recipeIngredients
 
+
+	debugger
 	// Event Listenter with Nested for loop 
 	// for creating a list of recipe INGREDIENTS
 	// ****************************************************
-	for( let i = 0; i<ingredients.length; i++) {
+	for( let i = 0; i<INGREDIENTS.length; i++) {
 
 		var newIng = document.createElement("li");
 		
-		newIng.className = "ingredients";
+		newIng.className = "INGREDIENTS";
 		newIng.classList.add("lead");
 
-		newIng.textContent = ingredients[i];
+		newIng.textContent = INGREDIENTS[i];
 
 		INGR.appendChild(newIng);
 	}
 
-	let instructions = recipesMeta[i].instructions
+	let instructions = recipesMeta[INDEX].instructions
 
 	// Event Listenter with Nested for loop 
 	// for creating a list of recipe INSTRUCTIONS
