@@ -101,27 +101,62 @@ LITEM.remove();
 
 // Variables to use querySelector on
 const INGR = document.querySelector("ul.ingredients"); // recipeIngredients
-const INSTRUCTIONS = document.querySelector(".steps-text"); // recipeInstructions
-const STEPS = document.querySelector(".steps-number"); // recipeStep
+const RSTEPS = document.querySelector("div.recipeStep"); //html node to duplicate for each step
+const ALLSTEPS = document.querySelector("div.allSteps") // html node where 'INSTRUCTIONS' & 'STEPS' live
+const INSTRUCTIONS = document.querySelector(".stepsText"); // recipeInstructions
+const STEPS = document.querySelector(".stepsNumber"); // recipeStep
 const RID = document.querySelector("ul.seeRecipe");
-const RLI = document.querySelector("ul.ingredients li.first")
+
+const RLI = document.querySelector("ul.ingredients li.first");
+const RSTEP = document.querySelector("div#recipeStep");
 
 RID.addEventListener('click', function(){
 
-	let ingredients = recipesMeta[0].ingredients
+	let i = 0;
+	let ingredients = recipesMeta[i].ingredients
 
-	// Nested for loop for creating a list of recipe tags
+	// Event Listenter with Nested for loop 
+	// for creating a list of recipe INGREDIENTS
 	// ****************************************************
 	for( let i = 0; i<ingredients.length; i++) {
 
 		var newIng = document.createElement("li");
-		// console.log(newTag);
-
+		
 		newIng.className = "ingredients";
+		newIng.classList.add("lead");
 
 		newIng.textContent = ingredients[i];
 
 		INGR.appendChild(newIng);
+
+	}
+
+	let instructions = recipesMeta[i].instructions
+
+	// Event Listenter with Nested for loop 
+	// for creating a list of recipe INSTRUCTIONS
+	// ****************************************************
+	for( let i = 0; i<instructions.length; i++) {
+
+		var newInst = document.createElement("div");
+
+		newInst.className = "recipeStep";
+		newInst.classList.add("feature");
+		newInst.classList.add("feature-3");
+		newInst.classList.add("recipe");
+		newInst.classList.add("row");	
+
+		newInst.innerHTML = RSTEPS.innerHTML;
+
+		ALLSTEPS.append(newInst);
+
+		// newStep = INSTRUCTIONS.innerText;
+		// console.log(newStep);
+
+		INSTRUCTIONS.innerText = instructions[i];
+		STEPS.innerText = "Step " + (i+1) + ":"
+
+		
 
 	}
 	console.log("you clicked it!");
@@ -129,6 +164,7 @@ RID.addEventListener('click', function(){
 }, false);
 
 RLI.remove();
+RSTEP.remove();
 
 // console.log(INGR.innerHTML);
 // console.log(INSTRUCTIONS.innerHTML);

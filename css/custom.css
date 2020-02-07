@@ -66,6 +66,12 @@ section.tag-search {
   border-bottom: 1px solid #eee;
 }
 
+.accordion li.active .content {
+    max-height: max-content;
+}
+.accordion-2 .content p {
+    padding: 0;
+}
 
 /*Recipe Details Styles*/
 /**********************************************/
