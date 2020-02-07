@@ -103,8 +103,6 @@ LITEM.remove();
 const INGR = document.querySelector("ul.ingredients"); // recipeIngredients
 const RSTEPS = document.querySelector("div.recipeStep"); //html node to duplicate for each step
 const ALLSTEPS = document.querySelector("div.allSteps") // html node where 'INSTRUCTIONS' & 'STEPS' live
-const INSTRUCTIONS = document.querySelector(".stepsText"); // recipeInstructions
-const STEPS = document.querySelector(".stepsNumber"); // recipeStep
 const RID = document.querySelector("ul.seeRecipe");
 
 const RLI = document.querySelector("ul.ingredients li.first");
@@ -128,7 +126,6 @@ RID.addEventListener('click', function(){
 		newIng.textContent = ingredients[i];
 
 		INGR.appendChild(newIng);
-
 	}
 
 	let instructions = recipesMeta[i].instructions
@@ -137,7 +134,6 @@ RID.addEventListener('click', function(){
 	// for creating a list of recipe INSTRUCTIONS
 	// ****************************************************
 	for( let i = 0; i<instructions.length; i++) {
-
 		var newInst = document.createElement("div");
 
 		newInst.className = "recipeStep";
@@ -148,7 +144,8 @@ RID.addEventListener('click', function(){
 
 		newInst.innerHTML = RSTEPS.innerHTML;
 
-		ALLSTEPS.append(newInst);
+		const INSTRUCTIONS = newInst.querySelector(".stepsText"); // recipeInstructions
+		const STEPS = newInst.querySelector(".stepsNumber"); // recipeStep
 
 		// newStep = INSTRUCTIONS.innerText;
 		// console.log(newStep);
@@ -156,6 +153,7 @@ RID.addEventListener('click', function(){
 		INSTRUCTIONS.innerText = instructions[i];
 		STEPS.innerText = "Step " + (i+1) + ":"
 
+		ALLSTEPS.append(newInst);
 		
 
 	}
