@@ -103,103 +103,108 @@ LITEM.remove();
 // Variables to use querySelector on
 const RSTEPS = document.querySelector("div.recipeStep"); //html node to duplicate for each step
 const ALLSTEPS = document.querySelector("div.allSteps") // html node where 'INSTRUCTIONS' & 'STEPS' live
-const RID = document.querySelector("ul.seeRecipe");
+const RID = document.querySelectorAll("ul.seeRecipe");
 
 const RLI = document.querySelector("ul.ingredients li.first");
 const RSTEP = document.querySelector("div.recipeStep");
 
 
-var clearDetails = RID.firstElementChild;
-// debugger
 
 
-RID.addEventListener('click', function(e){
+RID.forEach(function (eachClickHandler){
 
-		if (clearDetails.classList.contains("active")) {
+	var clearDetails = eachClickHandler.firstElementChild;
 
-				const INDEX = e.currentTarget.getAttribute('data-index');
-				const INGREDIENTS = recipesMeta[INDEX].ingredients
-				const INGR = e.currentTarget.querySelector("ul.ingredients"); // recipeIngredients
+	// Event Listener for populating the accordion with recipe details
+	// ******************************************************************
+	eachClickHandler.addEventListener('click', function(e){
 
+		const INDEX = e.currentTarget.getAttribute('data-index'); // reipe ingredient array index #
 
+		const INGREDIENTS = recipesMeta[INDEX].ingredients; // recipe Ingredients in the array
+		const INGR = e.currentTarget.querySelector("ul.ingredients"); // recipe ingredient home
 
-				// Event Listenter with Nested for loop 
-				// for creating a list of recipe INGREDIENTS
-				// ****************************************************
-				for( let i = 0; i<INGREDIENTS.length; i++) {
+		const INSTRUCTIONS = recipesMeta[INDEX].instructions; // recipe Instructions in the array
+		const INSTR = e.currentTarget.querySelector("div.allSteps")
 
-					var newIng = document.createElement("li");
-					
-					newIng.className = "ingredients";
-					newIng.classList.add("lead");
+			if (clearDetails.classList.contains("active")) {
 
-					newIng.textContent = INGREDIENTS[i];
+					// Nested for loop for creating a list of recipe INGREDIENTS
+					// ***********************************************************
+					for( let i = 0; i<INGREDIENTS.length; i++) {
 
-					INGR.appendChild(newIng);
-				}
+						var newIng = document.createElement("li");
+						
+						newIng.className = "ingredients";
+						newIng.classList.add("lead");
 
-				let instructions = recipesMeta[INDEX].instructions
+						newIng.textContent = INGREDIENTS[i];
 
-				// Event Listenter with Nested for loop 
-				// for creating a list of recipe INSTRUCTIONS
-				// ****************************************************
-				for( let i = 0; i<instructions.length; i++) {
-					var newInst = document.createElement("div");
+						INGR.appendChild(newIng);
+					}
 
-					newInst.className = "recipeStep";
-					newInst.classList.add("feature");
-					newInst.classList.add("feature-3");
-					newInst.classList.add("recipe");
-					newInst.classList.add("row");	
+					// debugger
 
-					newInst.innerHTML = RSTEPS.innerHTML;
+					let instructions = recipesMeta[INDEX].instructions
 
-					const INSTRUCTIONS = newInst.querySelector(".stepsText"); // recipeInstructions
-					const STEPS = newInst.querySelector(".stepsNumber"); // recipeStep
+					// Nested for loop for creating a list of recipe INSTRUCTIONS
+					// **********************************************************
+					for( let i = 0; i<INSTRUCTIONS.length; i++) {
+						var newInst = document.createElement("div");
 
-					// newStep = INSTRUCTIONS.innerText;
-					// console.log(newStep);
+						newInst.className = "recipeStep";
+						newInst.classList.add("feature");
+						newInst.classList.add("feature-3");
+						newInst.classList.add("recipe");
+						newInst.classList.add("row");	
 
-					INSTRUCTIONS.innerText = instructions[i];
-					STEPS.innerText = "Step " + (i+1) + ":"
+						newInst.innerHTML = RSTEPS.innerHTML;
 
-					ALLSTEPS.append(newInst);
-					
+						var stepContainer = newInst.querySelector("div.stepsContainer");
+						var stepText = newInst.querySelector("p.stepsText"); // recipeInstructions
 
-				}
-				console.log("you clicked it!");
+						stepText.textContent = INSTRUCTIONS[i]
 
-		} else {
+						var steps = newInst.querySelector(".stepsNumber"); // recipeStep
+						steps.innerText = "Step " + (i+1) + ":"
 
-			var ingList = document.querySelectorAll("ul.ingredients li");
-			var stepList = document.querySelectorAll("div.recipeStep");
+						stepContainer.append(stepText);
+						INSTR.append(newInst);
+						
 
+					}
+					console.log("you clicked it!");
 
-			ingList.forEach(function (ingredientItem) {
-			  ingredientItem.remove();
-			});
+			} else {
 
-			stepList.forEach(function (instructionStep) {
-			  instructionStep.remove();
-			});
-
-		};
-	}, false);
-
-	RLI.remove();
-	RSTEP.remove();
-
-	
+				var ingList = e.currentTarget.querySelectorAll("ul.ingredients li");
+				var stepList = e.currentTarget.querySelectorAll("div.recipeStep");
 
 
+				ingList.forEach(function (ingredientItem) {
+				  ingredientItem.remove();
+				});
+
+				stepList.forEach(function (instructionStep) {
+				  instructionStep.remove();
+				});
+
+			};
+		}, false);
+
+		// RLI.remove();
+		// RSTEP.remove();
+		var ingList = document.querySelectorAll("ul.ingredients li");
+		var stepList = document.querySelectorAll("div.recipeStep");
 
 
+		ingList.forEach(function (ingredientItem) {
+		  ingredientItem.remove();
+		});
 
+		stepList.forEach(function (instructionStep) {
+		  instructionStep.remove();
+		});
 
-
-
-
-// console.log(INGR.innerHTML);
-// console.log(INSTRUCTIONS.innerHTML);
-// console.log(STEPS.innerHTML);
+})
 
