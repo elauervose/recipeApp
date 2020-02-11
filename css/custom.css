@@ -73,6 +73,91 @@ section.tag-search {
     padding: 0;
 }
 
+  @media (min-width: 768px){
+    .bd-clipboard {
+        display: block;
+    }
+  }
+  
+  .bd-clipboard {
+      position: relative;
+      display: block;
+      float: right;
+  }
+  .btn-clipboard {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 10;
+      display: block;
+      padding: .25rem .5rem;
+      margin-bottom: .5rem;
+      font-size: 12px;
+      color: #5edcd0;
+      font-weight: 600;
+      background-color: white;
+      border: 2px solid #5edcd0;
+      border-radius: 0rem;
+  }
+  [type=button], button {
+      -webkit-appearance: button;
+  }
+  button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    overflow: visible;
+    text-transform: none;
+  }
+
+  .btn-clipboard:hover {
+      border-color:#5edcd0;
+      background: #5edcd0;
+      color: white;
+  }
+
+  .bd-clipboard+.highlight {
+      margin-top: 0;
+  }
+  @media (min-width: 576px) {
+    .bd-content .highlight {
+        margin-right: 0;
+        margin-left: 0;
+    }
+  }
+  .bd-content .highlight {
+      /*margin-right: -15px;
+      margin-left: -15px*/;
+  }
+  @media (min-width: 576px){
+    .highlight {
+        padding: 1.5rem;
+    }
+  }
+  
+  .highlight {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /*background-color: #f8f9fa*/;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  pre {
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 0 0 10px;
+    text-overflow: clip;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  button:focus{
+    outline: -webkit-focus-ring-color auto 0px;
+  } 
+
 /*Recipe Details Styles*/
 /**********************************************/
 
@@ -309,6 +394,17 @@ footer {
 
 /* New Recipe Styles
 **************************** */
+input.addField {
+  float: left; 
+  width: 85%; 
+  margin-right: 20px;
+}
+a.addField {
+  margin-top: 10px; 
+  margin-bottom: 10px;
+}
+
+
 
 .page-title-4 {
   height: 336px;
@@ -322,17 +418,8 @@ form.tagList {
 form.tagList span {
   margin-right: 5px;
 }
-/*textarea::after {
-    width: 100%;
-    border: none;
-    background: #f5f5f5;
-    margin-bottom: 24px;
-    border-radius: 0;
-    padding: 16px 20px;
-}
-textarea:after {
-    content: "\e6b4";
-}*/
+
+
 
 
 a.textareaButton {
@@ -340,128 +427,7 @@ a.textareaButton {
   margin-bottom: 10px;
   position: absolute;
   href=: ;
-  /* float: right; */
   margin-left: 85%;
-  /* x-offset-keyword | y-offset-keyword */
   transform-origin: right top;
 
-}
-
-.highlight {
-    position: relative;
-}
-.highlight {
-    background-color: #f5f5f5;
-    border-radius: 0px;
-    color: #586e75;
-}
-.highlight {
-    font-weight: 400;
-    max-width: 100%;
-    overflow: hidden;
-    padding: 0;
-}
-figure {
-    display: block;
-}
-.highlight-full .highlight pre {
-    max-height: none;
-}
-
-@media screen and (min-width: 769px), print .highlight pre {
-    white-space: pre-wrap;
-  }
-}
-
-.highlight pre {
-    max-height: 320px;
-    margin-bottom: 0!important;
-}
-.highlight pre {
-    background-color: transparent;
-    font-size: .875em;
-    line-height: 1.375;
-}
-
-.highlight pre {
-    overflow: auto;
-    max-width: 100%;
-}
-.highlight .bd-copy, .highlight .bd-expand {
-    background: 0 0;
-    /*border: none;*/
-    /*color: #4a4a4a;*/
-    cursor: pointer;
-    /*font-size: .625rem;*/
-    outline: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    position: absolute;
-    right: .25rem;
-    top: .25rem;
-}
-
-pre {
-    -webkit-overflow-scrolling: touch;
-    background-color: #f5f5f5;
-    color: #4a4a4a;
-    font-size: .875em;
-    overflow-x: auto;
-    padding: 1.25rem 1.5rem;
-    white-space: pre;
-    word-wrap: normal;
-    border: none;
-    border-radius: 0px;
-}
-pre {
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: auto;
-    font-family: monospace;
-}
-pre {
-    margin: 0;
-    padding: 0;
-}
-
-.highlight .bd-copy:hover, .highlight .bd-expand:hover {
-    background-color: #5edcd0;
-    color: white;
-    font-weight: 700;
-}
-
-.button.is-small {
-    border-radius: 2px;
-    font-size: .75rem;
-}
-
-.btn, .button {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #5edcd0;
-    padding: 0 26px;
-    height: 40px;
-    min-width: 150px;
-    line-height: 36px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 0;
-    color: #5edcd0;
-    text-align: center;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    margin-right: 8px;
-    margin-bottom: 24px;
-}
-.button:visited {
-    color: #5edcd0;
-}
-
-.button.btn-icon.btn-sm {
-    width: 30px;
-    height: 30px;
-    line-height: 29px;
-    font-size: 14px;
-    min-width: 0;
-    padding: 0 0 0 1px!important;
 }

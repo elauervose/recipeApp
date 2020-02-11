@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: newrecipe
 ---
 
 <section class="page-title page-title-4 image-bg overlay parallax">
@@ -30,29 +30,51 @@ layout: default
 					More instructions to come ....
 				</p>
 			</div>
-			<div class="col-sm-6 col-sm-offset-3">
-				
-				<input type="text" placeholder="Recipe Title" />
-				<div class="input-with-label text-left">
-					<span>Image Name: </span>
-					<span style="small">example: coconut-crusted-chicken-fingers.png</span>
-					<input type="text" placeholder="Image Name" />
-				</div>
-				<input type="text" placeholder="Recipe Author" />
-				<div class="input-with-label text-left">
-					<span>Recipe Source Location: </span>
-					<span style="small">url, or bibliographic reference</span>
-					<input type="text" placeholder="Recipe Source Location" />
-				</div>
-				<textarea placeholder="Description" rows="3"></textarea>
+		</div>
 
-
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
 				
+				<div class="row">
+					<div class="col-sm-6">
+						<!-- Recipe Title -->
+						<input class="recipeTitle" type="text" placeholder="Recipe Title" />
+					</div>
+					<div class="col-sm-6">
+						<!-- Author -->
+						<input class="recipeAuthor" type="text" placeholder="Recipe Author" />
+					</div>
+				</div>
 
 				<div class="row">
-					<h4>Select the tags that apply:</h4>
-					
-					<div class="row" style="padding-left: 8%;">
+					<div class="col-sm-6">
+						<!-- Image name -->
+						<div class="input-with-label text-left">
+							<span style="float: left;">Image Name: </span>
+							<input class="recipeImage" type="text" placeholder="example: coconut-crusted-chicken-fingers.png" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<!-- Recipe Source Location -->
+						<div class="input-with-label text-left">
+							<span>Recipe Source Location: </span>
+							<input class="recipeSource" type="text" placeholder="website url or bibliographic reference" />
+						</div>
+					</div>
+				</div>
+
+				
+				<!-- Recipe Description -->
+				<textarea class="recipeDescription" placeholder="Description" rows="3"></textarea>
+
+				<!-- Recipe Tags -->
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Select the tags that apply:</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
 						<form class="mb24 tagList">
 							<span>Summer</span>
 							<div class="checkbox-option pull-right">
@@ -110,51 +132,90 @@ layout: default
 							</div>
 						</form>
 					</div>
+					<div class="col-md-6">
+						<!-- Add new recipe tags -->
+						<div class="input-with-label text-left">
+							<span>Missing some tags? </span>
+							<span style="small">add 1 tag per line.</span>
+							<textarea class="recipeNewTag" placeholder="New Recipe Tags" rows="3">
+;lkj;lkj
+lkjhlkhj
+bbbmnjh</textarea>
 
+							<!-- <input class="addField" type="text" placeholder="First tag" />
+							<a href="#" class="btn btn-sm btn-icon addField"><i class="ti-plus"></i></a> -->
+						</div>
+					</div>
 				</div>
+				
 
-
-				<div class="input-with-label text-left">
-					<span>Missing some tags? </span>
-					<span style="small">add 1 tag per field. Click the plus icon to add more tags.</span>
-					<input style="float: left; width: 90%; margin-right: 20px;" type="text" placeholder="First tag" />
-					<a style="margin-top: 10px; margin-bottom: 10px; href="#" class="btn btn-sm btn-icon"><i class="ti-plus"></i></a>
-				</div>
+				
 
 				<hr>
 
+				<!-- Recipe Ingredients -->
 				<div class="input-with-label text-left">
 					<span>Ingredients: </span>
-					<span>add 1 ingredient per field. Click the plus icon to add more ingredients.</span>
-					<input style="float: left; width: 90%; margin-right: 20px;" type="text" placeholder="First ingredient" />
-					<a style="margin-top: 10px; margin-bottom: 10px; href="#" class="btn btn-sm btn-icon"><i class="ti-plus"></i></a>
+					<span>add 1 ingredient per line.</span>
+					<textarea class="recipeIngredients" placeholder="Recipe Ingredients" rows="3"></textarea>
+
+					<!-- <input class="addField" type="text" placeholder="First ingredient" />
+					<a href="#" class="btn btn-sm btn-icon addField"><i class="ti-plus"></i></a> -->
 				</div>
 
 				<hr>
 
+				<!-- Recipe Instructions -->
 				<div class="input-with-label text-left">
-					<span>Directions: </span>
-					<span>add 1 step per field. Click the plus icon to add more steps.</span>
-					<input style="float: left; width: 90%; margin-right: 20px;" type="text" placeholder="First step" />
-					<a style="margin-top: 10px; margin-bottom: 10px; href="#" class="btn btn-sm btn-icon"><i class="ti-plus"></i></a>
+					<span>Instructions: </span>
+					<span>add 1 step per line.</span>
+					<textarea class="recipeInstructions" placeholder="Recipe Instructions" rows="3"></textarea>
+
+					<!-- <input class="addField" type="text" placeholder="First step" />
+					<a href="#" class="btn btn-sm btn-icon addField"><i class="ti-plus"></i> --></a>
 				</div>
-				<textarea placeholder="My Notes: " rows="3"></textarea>
 
-				<input type="submit" value="Create my Array!" />
+				<!-- Recipe Notes -->
+				<textarea class="myNotes" placeholder="My Notes: " rows="3"></textarea>
 
-				<div class="outputContainer mt16">
-					<h5 class="mb8">Copy the text here and paste it into the file ...</h5>
-					<figure class="highlight">
-						<div class="container pt8 pb8">
-							<p>Hey!</p>
+				<div class="col-sm-4 col-sm-offset-4">
+					<!-- Submit Button -->
+					<input class="submit" type="submit" value="Create my Array!" />
+				</div>
+
+				<!-- Copy array field -->
+				<div class="row mt16">
+					<div class="col-sm-12">
+						<h5 class="mb8">Recipe Array Output:</h5>
+						<div class="bd-clipboard">
+							<button type="button" class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button>
 						</div>
-						<button class="btn btn-icon btn-sm button is-small bd-copy"><i class="ti-clipboard"></i></button>
-					</figure>
+						<pre class="recipeArrayOutput pt24">
+<span>{</span>
+	<span>id:</span><span class="outputId"></span> 
+	<span>title:</span><span class="outputTitle"></span> 
+	<span>img:</span><span class="outputImg"></span> 
+	<span>author:</span><span class="outputAuthor"></span> 
+	<span>recipesource:</span><span class="outputSourceUrl"></span> 
+	<span>tags: [</span><span class="outputTags"></span><span>],</span> 
+	<span>description:</span><span class="outputDescription"></span> 
+	<span>ingredients: [</span>
+		<span class="outputIngredients"></span>
+	<span>],</span> 
+	<span>instructions: [</span>
+		<span class="outputInstructions"></span>
+	<span>],</span> 
+	<span>notes:</span><span class="outputNotes"></span> 
+<span>}</span>
+						</pre>
+					</div>
 				</div>
 
-			</div>
+
+			</div><!--end of row-->
 		</div>
-		<!--end of row-->
+		
+
 	</div>
 	<!--end of container-->
 </section>
