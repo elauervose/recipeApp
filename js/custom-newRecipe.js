@@ -36,8 +36,27 @@ SUBMIT.addEventListener('click', function(){
 	outputTags.innerText = '"' + RECIPENEWTAG.value.replace(REGEX, '", "') + '" ';
 	
 
-	// outputIngredients.innerHTML = '"' + RECIPEINGREDIENTS.value + '", ';
-	// outputInstructions.innerHTML = '"' + RECIPEINSTRUCTIONS.value + '",';
+// Why does this not work???
+	// Turn Output Ingredients into an array using .split()
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+	// ****************************************************
+	// function output(stringToSplit, separator) {
+	// 	const arrayOfStrings = stringToSplit.split(separator)
+
+	// 	arrayOfStrings.join('", "');
+
+	// }
+	// const NEWLINE = '\n';
+	// var outputIngredients = '"' + RECIPEINGREDIENTS.value + '" ';
+
+	// output(outputIngredients, NEWLINE);
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+	var recipeIngredientArray = RECIPEINGREDIENTS.value.split('\n').join('", "');
+	outputIngredients.innerText = '"' + recipeIngredientArray + '" ';
+
+	var recipeInstructionsArray = RECIPEINSTRUCTIONS.value.split('\n').join('", "');
+	outputInstructions.innerText = '"' + recipeInstructionsArray + '" ';
 
 
 
