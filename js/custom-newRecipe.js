@@ -49,24 +49,16 @@ function IndexItem(id, title, img, author, authorurl, tags, description, recipeu
 }
 
 var allTags = [];
-var newTagList = [];
 
 for(let i = 0; i < recipesMeta.length; i++) {
+  var eachRecipeTagArray = recipesMeta[i].tags;
 
-	var eachRecipeTagArray = recipesMeta[i].tags;
+  for (let j = 0; j < eachRecipeTagArray.length; j++) {
+    allTags.push(eachRecipeTagArray[j]);
+  }
+}
 
-	newTagList.push(eachRecipeTagArray);
-
-	for (let i = 0; i < newTagList.length; i++) {
-		allTags = '"' + newTagList.join(',') + '"';
-	}
-};
-const COMMA = /,/gi
-allTags = allTags.replace(COMMA, '", "'); 
-
-
-
-// allTags.sort();
+allTags.sort();
 
 console.log(allTags);
 
