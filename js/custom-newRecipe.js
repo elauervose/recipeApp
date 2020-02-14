@@ -48,54 +48,28 @@ function IndexItem(id, title, img, author, authorurl, tags, description, recipeu
 	this.notes = notes;
 }
 
-var allTags0 = recipesMeta[0].tags;
-var allTags1 = recipesMeta[1].tags;
-var allTags2 = recipesMeta[2].tags;
-var allTags3 = recipesMeta[3].tags;
-var allTags4 = recipesMeta[4].tags;
-
-allTags = allTags0.concat(allTags1, allTags2, allTags3, allTags4);
-console.log(allTags);
+var allTags = [];
+var newTagList = [];
 
 for(let i = 0; i < recipesMeta.length; i++) {
 
 	var eachRecipeTagArray = recipesMeta[i].tags;
-	console.log(eachRecipeTagArray);
 
-	
+	newTagList.push(eachRecipeTagArray);
 
+	for (let i = 0; i < newTagList.length; i++) {
+		allTags = '"' + newTagList.join(',') + '"';
+	}
 };
-
-
-// for (let i = 0; i < recipesMeta.length; i++) {
-
-// 	  (function(i) {
-// 	    this.print = function() {
-// 	      return this.tags;
-// 	      // console.log('"' + this.tags + '"');
-// 	    }
-// 	    this.print();
-// 	    console.log('"' + this.tags + '"');
-// 	  }).call(recipesMeta[i], i);
-
-// }
+const COMMA = /,/gi
+allTags = allTags.replace(COMMA, '", "'); 
 
 
 
-// const animals = [
-//   { species: 'Lion', name: 'King' },
-//   { species: 'Whale', name: 'Fail' }
-// ];
+// allTags.sort();
 
-// for (let i = 0; i < animals.length; i++) {
-//   (function(i) {
-//     this.print = function() {
-//       console.log('#' + i + ' ' + this.species
-//                   + ': ' + this.name);
-//     }
-//     this.print();
-//   }).call(animals[i], i);
-// }
+console.log(allTags);
+
 
 
 const RECIPELISTTAGS = document.querySelector("div.currentTagOptions");
