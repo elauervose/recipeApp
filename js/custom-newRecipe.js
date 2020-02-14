@@ -48,19 +48,65 @@ function IndexItem(id, title, img, author, authorurl, tags, description, recipeu
 	this.notes = notes;
 }
 
+var allTags0 = recipesMeta[0].tags;
+var allTags1 = recipesMeta[1].tags;
+var allTags2 = recipesMeta[2].tags;
+var allTags3 = recipesMeta[3].tags;
+var allTags4 = recipesMeta[4].tags;
+
+allTags = allTags0.concat(allTags1, allTags2, allTags3, allTags4);
+console.log(allTags);
+
+for(let i = 0; i < recipesMeta.length; i++) {
+
+	var eachRecipeTagArray = recipesMeta[i].tags;
+	console.log(eachRecipeTagArray);
+
+	
+
+};
+
+
+// for (let i = 0; i < recipesMeta.length; i++) {
+
+// 	  (function(i) {
+// 	    this.print = function() {
+// 	      return this.tags;
+// 	      // console.log('"' + this.tags + '"');
+// 	    }
+// 	    this.print();
+// 	    console.log('"' + this.tags + '"');
+// 	  }).call(recipesMeta[i], i);
+
+// }
+
+
+
+// const animals = [
+//   { species: 'Lion', name: 'King' },
+//   { species: 'Whale', name: 'Fail' }
+// ];
+
+// for (let i = 0; i < animals.length; i++) {
+//   (function(i) {
+//     this.print = function() {
+//       console.log('#' + i + ' ' + this.species
+//                   + ': ' + this.name);
+//     }
+//     this.print();
+//   }).call(animals[i], i);
+// }
+
 
 const RECIPELISTTAGS = document.querySelector("div.currentTagOptions");
 const RECIPECURRENTTAGS = document.querySelector("form.tagList");
-// const ADDTAG = document.querySelector("span.tagLabel");
-var tagInnerHtml = document.querySelector("div.checkbox-option.pull-right")
 
-for(let i = 0; i<recipesMeta.length; i++) {
+for(let i = 0; i < recipesMeta.length; i++) {
 
 	var eachRecipeTagArray = recipesMeta[i].tags;
 
-	console.log(eachRecipeTagArray);
 
-	for(let a = 0; a<eachRecipeTagArray.length; a++) {
+	for(let a = 0; a < eachRecipeTagArray.length; a++) {
 
 		var newTagSpan = document.createElement("span");
 		newTagSpan.className = "tagLabel";
@@ -69,7 +115,6 @@ for(let i = 0; i<recipesMeta.length; i++) {
 
 		var newTagForm = document.createElement("form");
 		newTagForm.className = "tagList";
-		newTagForm.classList.add("mb24");
 
 		newTagForm.appendChild(newTagSpan);
 
@@ -94,9 +139,6 @@ for(let i = 0; i<recipesMeta.length; i++) {
 
 
 		RECIPELISTTAGS.append(newTagForm);
-
-		console.log(newTagForm);
-
 	};
 
 };
