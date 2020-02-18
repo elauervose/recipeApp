@@ -129,70 +129,49 @@ var outputIngredients = document.querySelector("span.outputIngredients");
 var outputInstructions = document.querySelector("span.outputInstructions");
 var outputNotes = document.querySelector("span.outputNotes");
 
-outputTitle.innerText = '"' + RECIPETITLE.value + '",';
-outputImg.innerText = '"' + RECIPEIMAGE.value + '", ';
-outputAuthor.innerText = '"' + RECIPEAUTHOR.value + '"';
-outputSourceUrl.innerText = '"' + RECIPESOURCE.value + '", ';
-outputDescription.innerText = '"' + RECIPEDESCRIPTION.value + '", ';
-outputNotes.innerText = '"' + MYNOTES.value + '"';
-outputIngredients.innerText = '"' + RECIPEINGREDIENTS.value + '", ';
-outputInstructions.innerText = '"' + RECIPEINSTRUCTIONS.value + '", ';
-
 var checked = document.querySelectorAll("form.tagList div.checkbox-option.pull-right.checked");
 var checkedTag = document.querySelectorAll("span.tagLabel");
 
 SUBMIT.addEventListener('click', function(){
 
-	const REGEX = /\n/gi;
-	outputTags.innerText = '"' + RECIPENEWTAG.value.replace(REGEX, '", "') + '" ';
-	
-	// var recipeIngredientArray = RECIPEINGREDIENTS.value.split('\n').join('", "');
-	// outputIngredients.innerText = '"' + recipeIngredientArray + '" ';
+	outputTitle.innerText = '"' + RECIPETITLE.value + '",';
+	outputImg.innerText = '"' + RECIPEIMAGE.value + '", ';
+	outputAuthor.innerText = '"' + RECIPEAUTHOR.value + '"';
+	outputSourceUrl.innerText = '"' + RECIPESOURCE.value + '", ';
+	outputDescription.innerText = '"' + RECIPEDESCRIPTION.value + '", ';
+	outputNotes.innerText = '"' + MYNOTES.value + '"';
 
-	// var recipeInstructionsArray = RECIPEINSTRUCTIONS.value.split('\n').join('", "');
-	// outputInstructions.innerText = '"' + recipeInstructionsArray + '" ';
-
-
-
-	// Why do these not work???
-	// Turn Output Ingredients into an array using .split()
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
-	// ****************************************************
-
-	checked.forEach(function(tag){
-		checked = tag;
-		if(checked){
-			console.log(this.checkedTag.innerText);
-		} else {};
-
-	});
-
+	// const REGEX = /\n/gi;
+	// outputTags.innerText = '"' + RECIPENEWTAG.value.replace(REGEX, '", "') + '" ';
 
 	function output(stringToSplit, separator) {
 
-		const arrayOfStrings = stringToSplit;
-		// console.log("string to split: " + arrayOfStrings);
+		var newArrayOfStrings = [];
+		let arrayOfStrings = stringToSplit;
 
-		arrayOfStrings.trim();
-		// console.log("String with whitespace trimmed: " + arrayOfStrings);
-
-		arrayOfStrings.split(separator).join('", "');
-		// console.log("String is split by newline & joined by quotes & commmas: " + arrayOfStrings);
-
-		// arrayOfStrings.join();
+		arrayOfStrings = arrayOfStrings.split(separator);
+		
+		arrayOfStrings.forEach(function (stringArray) {
+			stringArray = stringArray.trim();
+			newArrayOfStrings.push(stringArray);
+		});
+		// console.log(newArrayOfStrings);
+		arrayOfStrings = newArrayOfStrings.join('", "');
 
 		return '"' + arrayOfStrings + '"';
 	}
 
 	const NEWLINE = '\n';
-	var outputIngredients = RECIPEINGREDIENTS.value;
-	var outputInstructions = RECIPEINSTRUCTIONS.value ;
+	var outputIng = RECIPEINGREDIENTS.value;
+	var outputInst = RECIPEINSTRUCTIONS.value;
+	var outputTagList = RECIPENEWTAG.value;
 
-	console.log("Ingredients: " + output(outputIngredients, NEWLINE));
-	console.log("Instructions: " + output(outputInstructions, NEWLINE));
-	
-	outputIngredients.innerText = output(RECIPEINGREDIENTS.value, NEWLINE);
-	outputInstructions.innerText = output(RECIPEINSTRUCTIONS.value, NEWLINE);
+	// console.log("Ingredients: " + output(outputIng, NEWLINE));
+	// console.log("Instructions: " + output(outputInst, NEWLINE));
+
+	outputIngredients.innerText = output(outputIng, NEWLINE);
+	outputInstructions.innerText = output(outputInst, NEWLINE);
+	outputTags.innerText =  output(outputTagList, NEWLINE);
 
 }, false);
 
