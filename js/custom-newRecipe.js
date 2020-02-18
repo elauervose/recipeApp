@@ -134,12 +134,24 @@ var checkedTag = document.querySelectorAll("span.tagLabel");
 
 SUBMIT.addEventListener('click', function(){
 
-	outputTitle.innerText = '"' + RECIPETITLE.value + '",';
-	outputImg.innerText = '"' + RECIPEIMAGE.value + '", ';
-	outputAuthor.innerText = '"' + RECIPEAUTHOR.value + '"';
-	outputSourceUrl.innerText = '"' + RECIPESOURCE.value + '", ';
-	outputDescription.innerText = '"' + RECIPEDESCRIPTION.value + '", ';
-	outputNotes.innerText = '"' + MYNOTES.value + '"';
+	outputTitle.innerText = RECIPETITLE.value;
+	outputTitle.innerText = '"' + outputTitle.innerText.trim() + '"';
+
+	outputImg.innerText = RECIPEIMAGE.value; 
+	outputImg.innerText = '"' + outputImg.innerText.trim() + '"';
+
+	outputAuthor.innerText = RECIPEAUTHOR.value;
+	outputAuthor.innerText = '"' + outputAuthor.innerText.trim() + '"';
+
+	outputSourceUrl.innerText = RECIPESOURCE.value;
+	outputSourceUrl.innerText = '"' + outputSourceUrl.innerText.trim() + '"';
+
+	outputDescription.innerText = RECIPEDESCRIPTION.value;
+	outputDescription.innerText = '"' + outputDescription.innerText.trim() + '"';
+
+	outputNotes.innerText = MYNOTES.value;
+	outputNotes.innerText = '"' + outputNotes.innerText.trim() + '"';
+
 
 	// const REGEX = /\n/gi;
 	// outputTags.innerText = '"' + RECIPENEWTAG.value.replace(REGEX, '", "') + '" ';
